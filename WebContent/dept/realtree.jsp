@@ -12,42 +12,52 @@
 <link rel="stylesheet" href="/kimsaemERP/common/css/jquery.treeview.css" />
 <!-- <link rel="stylesheet" href="/kimsaemERP/common/css/screen.css" /> -->
 
-<!-- <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/kimsaemERP/common/js/jquery.cookie.js"></script>
 <script src="/kimsaemERP/common/js/jquery.treeview.js" type="text/javascript"></script>
 <script src="/kimsaemERP/common/js/demo.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-
-	function runAjax(deptno) {
-		alert(deptno);
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function() {
-			if (xhr.readyState == 4 && xhr.status == 200) {
-				alert(xhr.responseText);
-				//document.getElementById("result").innerHTML = xhr.responseXML;
-			}
+	$(document).ready(function() {
+		$(".folder").on("click", function() {
+			deptname = $(this).text().trim();
+			//this의 다음노드로 접근
+			ulnode = $(this).next();
+			//ul 노드의 id속성값을 구하기
+			deptno = $(ulnode).attr("id");
+			//alert(deptno)
+			$.get("kimsaemERP/emptree.do", {"deptno": deptno}, getData, "json");
+	
+		});
+		// 동적으로 생성된 노드(ajax 실행결과로 추가된 태그)에 이벤트를 연결하는 방법
+		// 1 매개 변수 - 이벤트 시점, 2 매개변수 - 어떤 태그에 이벤트를 연결할 것인지 정의
+		// 3 매개 변수 - 이벤트가 발생할때 실행할 함수
+		$(document).on("click", ".file", function(){
+			alert("test");
+		})
+		
+	});
+	function getData(data) {
+		//alert(data.emplist[0].name);
+		myli = "";
+		for(i in data.emplist){
+			myli = myli+"<li><span class='file' id='"+
+				data.emplist[i].id+"'>"+
+				data.emplist[i].name+"</span></li>";
 		}
-		xhr.open("GET", "/kimsaemERP/emptree.do?deptno="+deptno, true);
-		xhr.send();
 	}
-
-
-	</script>
+</script>
 </head>
 	<%	ArrayList<DeptDTO> list = (ArrayList<DeptDTO>) request.getAttribute("list"); %>
 <body>
-
 	<h1 id="banner">ERP 조직도 - 계층구조표현</h1>
 		<ul id="browser" class="filetree">
 			<%	for (int i = 0; i < list.size(); i++) {	%>
-			<li class="closed">
-			<span class="folder" onclick="runAjax('<%=list.get(i).getDeptno()%>')"><%=list.get(i).getDeptname()%></span>
-			<ul id = >
-				<li><span id="result" class="file"></span></li>
+			<li class="closed" id="" value="">
+			<span class="folder" id="deptnobtn"><%=list.get(i).getDeptname()%></span>
+			<ul id="<%=list.get(i).getDeptno()%>">
 			</ul>
-			
 				<%
 					}
 				%></li>

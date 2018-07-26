@@ -76,6 +76,8 @@
 	
 	function readyCallback1(){
 		if (xhr.readyState == 4 && xhr.status == 200) {
+			mydiv = document.getElementById("empinfo")
+			mydiv.setAttribute("style", "display:block");
 			alert(xhr.responseText);
 			var rootjson = JSON.parse(xhr.responseText);
 			var deptnode = document.getElementById("deptno");
@@ -84,12 +86,9 @@
 			 	document.getElementById("id").innerHTML = "<div>"+rootjson.empjson.id+"</div>";
 			 	document.getElementById("position").innerHTML = "<div>"+rootjson.empjson.position+"</div>";
 			 	document.getElementById("duty").innerHTML = "<div>"+rootjson.empjson.duty+"</div>";
-		
-		
+			 	document.getElementById("userImage").src="/kimsaemERP/images/"+rootjson.empjson.profile_photo;
 		}
-		
 	}
-	
 	</script>
 </head>
 <%	ArrayList<DeptDTO> list = (ArrayList<DeptDTO>) request.getAttribute("list");
@@ -111,7 +110,7 @@
 		</ul>
 	</div>
 	
-	<div style="margin-top: 20px; height: 400px;"" class=col-sm-5">
+	<div style="margin-top: 20px; height: 400px; display: none;" class=col-sm-5" id="empinfo" >
 		<form role="form" class="form-horizontal"
 			action="/kimsaemERP/getEmpInfo.do" method="get" name="myform">
 			<fieldset>
@@ -120,8 +119,8 @@
 				</div>
 				<div class="form-group">
 					<p class="col-sm-4">
-<%-- 						<img src="/kimsaemERP/images/<%=user.getProfile_photo() %>"
-							id="userImage" style="width: 100px"> --%>
+						<img src=""
+							id="userImage" style="width: 100px">
 					</p>
 					<div class="col-sm-7" style="color: blue;">직원 정보가 보여지는 곳으로
 						수정을 원하시면 부서별인사조회를 선택하고 작업하세요.</div>
@@ -135,14 +134,13 @@
 					</div>
 				</div>
 				
-				<%-- 					<div class="form-group">
+				 	<div class="form-group">
 						<!-- 부서코드 -->
 						<label class="control-label col-sm-4" for="orgcode">부서명</label>
 						<div class="control-label col-sm-3">
 							<!-- 여기에 부서코드를 출력하세요  -->
-							<%= user.getDeptname() %>
 						</div>
-					</div> --%>
+					</div> 
 
 				<div class="form-group">
 					<!-- 성명-->

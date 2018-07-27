@@ -24,7 +24,7 @@ import erp.service.empServiceImpl;
 // ajax 요청될떄 전달되는 부서번호를 받아서 해당부서에 근무하는 직원정보를 조회한다.
 // 조회된 정보를 jsp 로 response 할때 비동기로 처리된 요청이므로 forward를 할수  없고
 // 조회된 정보를 json으로 변환해서 response 해야한다.
-@WebServlet(name = "emptree", urlPatterns = { "/emptree.do" })
+@WebServlet(name = "emptree", urlPatterns = { "/emp/emptree.do" })
 public class GetEmpTree extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

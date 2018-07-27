@@ -2,7 +2,6 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +39,7 @@
 					<td><%=list.get(i).getName() %></td>
 					<td><%=list.get(i).getDeptname() %></td>
 					<td><%=list.get(i).getDuty() %></td>
-					<td><a href="/kimsaemERP/empread.do?id=<%=list.get(i).getId()%>">직원보기</a></td>
+					<td><a href="/kimsaemERP/emp/empread.do?id=<%=list.get(i).getId()%>">직원보기</a></td>
 					<td><a href="#"><%=list.get(i).getPhoneco() %></a></td>
 				</tr>
 			<% }%>

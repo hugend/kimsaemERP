@@ -16,7 +16,7 @@ import erp.service.DeptServiceImpl;
 import erp.service.empService;
 import erp.service.empServiceImpl;
 
-@WebServlet(name = "emplist", urlPatterns = { "/emplist.do" })
+@WebServlet(name = "emplist", urlPatterns = { "/emp/emplist.do" })
 public class EmpListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {

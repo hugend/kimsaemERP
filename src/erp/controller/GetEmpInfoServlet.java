@@ -14,7 +14,7 @@ import org.json.simple.JSONObject;
 import erp.dto.MemberDTO;
 import erp.service.empService;
 import erp.service.empServiceImpl;
-@WebServlet(name = "getEmpInfo", urlPatterns = { "/getEmpInfo.do" })
+@WebServlet(name = "getEmpInfo", urlPatterns = { "/emp/getEmpInfo.do" })
 public class GetEmpInfoServlet extends HttpServlet {
 	@SuppressWarnings("unchecked")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

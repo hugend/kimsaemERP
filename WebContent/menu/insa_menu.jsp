@@ -16,7 +16,7 @@
 		 class="list-group-item">부서조회</a>
 		<a href="/kimsaemERP/dept/getname.do?action=org"
 		 class="list-group-item">조직도</a>
-		<a href="/kimsaemERP/emplist.do" class="list-group-item">부서별 인사 조회</a>
+		<a href="/kimsaemERP/emp/emplist.do" class="list-group-item">부서별 인사 조회</a>
 		<a href="#"	class="list-group-item">인사평가</a>
 		<a href="#" class="list-group-item">인사점수조회하기</a>
 	</div>

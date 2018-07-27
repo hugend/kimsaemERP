@@ -20,9 +20,8 @@
 					</div>
 					<div class="form-group" style="padding: 40px">
 						<p class="centered">
-							<img src="/kimsaemERP/images/<%=dto.getProfile_photo() %>" 
+							<img src="/kimsaemERP/upload/<%=dto.getProfile_photo() %>" 
 							 id="userImage" style="width: 100px">
-							 
 						</p>
 						<div>
 							

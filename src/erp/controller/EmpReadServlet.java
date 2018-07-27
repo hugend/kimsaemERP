@@ -17,7 +17,7 @@ import erp.service.DeptServiceImpl;
 import erp.service.empService;
 import erp.service.empServiceImpl;
 
-@WebServlet(name = "empread", urlPatterns = { "/empread.do" })
+@WebServlet(name = "empread", urlPatterns = { "/emp/empread.do" })
 public class EmpReadServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("euc-kr");

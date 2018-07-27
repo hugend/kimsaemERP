@@ -27,7 +27,7 @@
 	<div class="container-fluid">
 			<form role="form" class="form-horizontal"
 				action="/kimsaemERP/insert.do" method="POST" 
-				name="myform">
+				name="myform" enctype="multipart/form-data">
 				<fieldset>
 					<div id="legend">
 						<legend>아래 양식을 작성해주세요.</legend>
@@ -39,7 +39,7 @@
 						</p>
 						<div>
 							<input type="file" name="userImage"
-								onchange="document.getElementById('userImage').src = window.URL.createObjectURL(this.files[0])"
+								 onchange="document.getElementById('userImage').src = window.URL.createObjectURL(this.files[0])"
 								accept="image/*">
 						</div>
 					</div>

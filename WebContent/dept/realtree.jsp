@@ -26,20 +26,17 @@
 			ulnode = $(this).next();
 			//ul 노드의 id속성값을 구하기
 			deptno = $(ulnode).attr("id");
-			//alert(deptno)
-			$.get("kimsaemERP/emptree.do", {"deptno": deptno}, getData, "json");
+			alert(deptno+deptname);
+			$.get("/kimsaemERP/emptree.do", {"deptno": deptno}, getData, "json");
 	
 		});
 		// 동적으로 생성된 노드(ajax 실행결과로 추가된 태그)에 이벤트를 연결하는 방법
 		// 1 매개 변수 - 이벤트 시점, 2 매개변수 - 어떤 태그에 이벤트를 연결할 것인지 정의
 		// 3 매개 변수 - 이벤트가 발생할때 실행할 함수
-		$(document).on("click", ".file", function(){
-			alert("test");
-		})
 		
 	});
 	function getData(data) {
-		//alert(data.emplist[0].name);
+		alert("getData: "+data.emplist[0].name);
 		myli = "";
 		for(i in data.emplist){
 			myli = myli+"<li><span class='file' id='"+
@@ -55,7 +52,7 @@
 		<ul id="browser" class="filetree">
 			<%	for (int i = 0; i < list.size(); i++) {	%>
 			<li class="closed" id="" value="">
-			<span class="folder" id="deptnobtn"><%=list.get(i).getDeptname()%></span>
+			<span class="folder"><%=list.get(i).getDeptname()%></span>
 			<ul id="<%=list.get(i).getDeptno()%>">
 			</ul>
 				<%

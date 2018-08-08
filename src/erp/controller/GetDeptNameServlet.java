@@ -23,7 +23,6 @@ public class GetDeptNameServlet extends HttpServlet {
 		list = service.getDeptName();
 		String action = request.getParameter("action");
 		
-		
 		if(action.equals("register")){
 			request.setAttribute("viewpath", "/emp/register.jsp");
 		}else if(action.equals("tree")){

@@ -31,8 +31,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	서블릿으로 작업한 content.jsp
-
+	스프링으로 작성한 WEB-INF content.jsp
 	<div style="background-color: #edeef1;padding: 20px;height: 800px">
 		
 			<div class="row" style="margin-left: auto;margin-right: auto;">
@@ -42,7 +41,7 @@
 			 		 style="border-color:white;height: 800px;">
 				        <div style="background-color:#63cde7;padding: 20px;
 				        font-family:HY-견고딕;font-size: 16pt;color: white; 
-				        font-weight: bolder;">${loginUser.job_category }</div>
+				        font-weight: bolder;"></div>
 
 				       <jsp:include page="${menupath }"></jsp:include>
       				 </div>

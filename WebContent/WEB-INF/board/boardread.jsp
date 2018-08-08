@@ -7,6 +7,34 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>게시판</h1>
+
+	<div>
+		<table>
+			<tr>
+				<td>글번호/날짜</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>작성자</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>구분</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td></td>
+			</tr>
+		
+		
+		</table>
+	
+	</div>
+
 </body>
 </html>
